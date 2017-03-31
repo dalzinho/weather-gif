@@ -47,6 +47,8 @@
 
 	var showGif = function(gifObject){
 		var gifDiv = document.querySelector('#weather-gif');
+		gifDiv.innerHTML = "";
+		gifDiv
 		var img = document.createElement('img');
 		var randomnumber = Math.floor((Math.random() * gifObject.data.length) + 1)
 		img.src= "";
@@ -56,9 +58,6 @@
 
 	var handlePress = function(event){
 			if(event.which==13){
-
-				console.log('scope of return press', searchInput);
-
 				var weatherUrl="http://api.openweathermap.org/data/2.5/weather?q=" + this.value + "&APIKEY=b319899fc6ddf6c46f1fdbbbb0b52185"
 				makeRequest(weatherUrl, handleWeatherRequest);
 				setTimeout(function(){
@@ -76,7 +75,6 @@
 		
 		searchInput.onkeypress = function(event){
 			if(event.which==13){
-		console.log('search input', searchInput);
 			var weatherUrl="http://api.openweathermap.org/data/2.5/weather?q=" + this.value + "&APIKEY=b319899fc6ddf6c46f1fdbbbb0b52185"
 				makeRequest(weatherUrl, handleWeatherRequest);
 				setTimeout(function(){
