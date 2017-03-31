@@ -73,10 +73,18 @@
 		// 	makeRequest(gifUrl, handleGifRequest)}, 1000);
 
 		var searchInput = document.querySelector('#search-input');
-		console.log('search input', searchInput);
+		
 		searchInput.onkeypress = function(event){
-			handlePress(event);
-		}.bind(this);
+			if(event.which==13){
+		console.log('search input', searchInput);
+			var weatherUrl="http://api.openweathermap.org/data/2.5/weather?q=" + this.value + "&APIKEY=b319899fc6ddf6c46f1fdbbbb0b52185"
+				makeRequest(weatherUrl, handleWeatherRequest);
+				setTimeout(function(){
+			makeRequest(gifUrl, handleGifRequest)}, 1000);
+			
+
+			}
+		};
 		//local storage last viewed location?
 	}
 
