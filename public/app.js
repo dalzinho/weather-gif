@@ -20,7 +20,11 @@
 
 		weatherType = returnedObject.weather[0].description;
 
-		gifUrl = "http://api.giphy.com/v1/gifs/search?q=" + weatherType.split(' ').join('+') + "&api_key=dc6zaTOxFJmzC";
+		var gifSearch = weatherType.split(' ')[0] + '+' + weatherType.split(' ')[1];
+
+		console.log(gifSearch);
+
+		gifUrl = "http://api.giphy.com/v1/gifs/search?q=" + gifSearch + "&api_key=dc6zaTOxFJmzC";
 	}
 
 	var handleGifRequest = function(){
