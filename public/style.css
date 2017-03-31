@@ -1,0 +1,14 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#weather-gif {
+	max-width: 600px;
+}
+#city-search {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
