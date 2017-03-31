@@ -15,13 +15,24 @@
 
 		var jsonString = this.responseText;
 		var returnedObject = JSON.parse(jsonString);
-		return(returnedObject);
+		console.log(returnedObject);
+		showWeatherInfo(returnedObject);
+
+		var sometext = ".list.weather.description";
 	}
 
+	var showWeatherInfo = function(weatherObject){
+		var h1 = document.querySelector('#cityname');
+		h1.innerText = weatherObject.city.name;
+	}
 
 	var app = function(){
-		var weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&b319899fc6ddf6c46f1fdbbbb0b52185"
+
+
+		var weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APIKEY=b319899fc6ddf6c46f1fdbbbb0b52185"
 		var weather = makeRequest(weatherUrl, requestComplete);
+
+		console.log(weather);
 	}
 
 	window.onload = app;
