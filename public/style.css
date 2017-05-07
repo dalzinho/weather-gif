@@ -4,9 +4,18 @@ body {
 	align-items: center;
 }
 
+#cityname {
+  font-family: 'Press Start 2P', sans-serif;
+}
+
 #weather-gif {
 	max-width: 600px;
 }
+
+#weather-description {
+  font-family: 'Montserrat', sans-serif;
+}
+
 #city-search {
 	display: flex;
 	flex-direction: column;

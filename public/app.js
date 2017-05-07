@@ -54,10 +54,12 @@
 		gifDiv.innerHTML = "";
 		gifDiv
 		var img = document.createElement('img');
-		var randomnumber = Math.floor((Math.random() * gifObject.data.length) + 1)
+		var randomnumber = Math.floor((Math.random() * gifObject.data.length) + 1);
+		var gif = gifObject.data[randomnumber].images.original.url;
 		img.src= "";
-		img.src = gifObject.data[randomnumber].images.original.url;
+		img.src = gif;
 		gifDiv.appendChild(img);
+		body.setAttribute('background', gif);
 	}
 
 	var handlePress = function(event){
